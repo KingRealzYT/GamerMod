@@ -3,7 +3,6 @@ using BepInEx.Configuration;
 using BepInEx.IL2CPP;
 using HarmonyLib;
 using Reactor;
-using Essentials.CustomOptions;
 
 namespace GamerMod
 {
@@ -17,10 +16,10 @@ namespace GamerMod
         private Harmony Harmony { get; } = new Harmony(Id);
 
         public ConfigEntry<string> Name { get; private set; }
-        public static UseButtonManager ButtonManager;
 
         public override void Load()
         {
+            System.Console.WriteLine("GamerMod Loaded!");
             Harmony.PatchAll();
         }
     }
